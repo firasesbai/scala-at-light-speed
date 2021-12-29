@@ -13,6 +13,8 @@ object Basics extends App {
   val aComposedString = "I" + " " + "love" + " " + "Scala"
   val anInterpolatedString = s"The meaning of life is $meaningOfLife"
 
+  // everything in scala is an expression
+
   // expressions = structures that can be reduced to a value
   val anExpression = 2 + 3
 
@@ -52,6 +54,7 @@ object Basics extends App {
    */
 
   // In Scala we don't use loops or iteration, we use RECURSION!
+  // Iteration is heavily discouraged
 
   // the Unit type = no meaningful value === "void" in other languages
   // type of SIDE EFFECTS

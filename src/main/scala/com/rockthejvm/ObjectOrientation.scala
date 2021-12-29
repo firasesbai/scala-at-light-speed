@@ -2,7 +2,7 @@ package com.rockthejvm
 
 object ObjectOrientation extends App {
 
-  // java equivalent: public static void main(String[] args)
+  // extends APP -> java equivalent: public static void main(String[] args)
 
   // class and instance
   class Animal {
@@ -19,6 +19,8 @@ object ObjectOrientation extends App {
   val aDog = new Dog("Lassie")
 
   // constructor arguments are NOT fields: need to put a val before the constructor argument
+  // without val name argument is ephemeral; it is not visible outside the class definition
+
   aDog.name
 
   // subtype polymorphism
@@ -27,11 +29,11 @@ object ObjectOrientation extends App {
 
   // abstract class
   abstract class WalkingAnimal {
-    val hasLegs = true // by default public, can restrict by adding protected or private
+    val hasLegs = true // by default public, can restrict by adding protected(this class and its descendants) or private(only this class)
     def walk(): Unit
   }
 
-  // "interface" = ultimate abstract type
+  // "interface" = ultimate abstract type -> leave everything unimplemented
   trait Carnivore {
     def eat(animal: Animal): Unit
   }
@@ -82,7 +84,7 @@ object ObjectOrientation extends App {
   MySingleton.apply(65)
   MySingleton(65) // equivalent to MySingleton.apply(65)
 
-  object Animal { // companions - companion object
+  object Animal { // companions - companion object (it has the same name as an existing class (or possibly trait))
     // companions can access each other's private fields/methods
     // singleton Animal and instances of Animal are different things
     val canLiveIndefinitely = false
@@ -91,7 +93,7 @@ object ObjectOrientation extends App {
   val animalsCanLiveForever = Animal.canLiveIndefinitely // "static" fields/methods
 
   /*
-   case classes = lightweight data structures with some boilerplate
+   case classes = lightweight data structures with some boilerplate (generate automatically by the compiler)
    - sensible equals and hash code
    - serialization
    - companion with apply
@@ -134,7 +136,7 @@ object ObjectOrientation extends App {
    */
   val reversedList = aList.reverse // returns a NEW list
 
-  // Point #2: Scala is closest to the OO ideal
-
+  // Point #2: Scala is closest to the Object Oriented OO ideal
+  // there are no values or methods that are outside a class or an object we can call scala a true OO language
 
 }

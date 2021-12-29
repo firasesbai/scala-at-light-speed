@@ -38,7 +38,7 @@ object Advanced extends App {
     case Success(validValue) => s"I have obtained a valid string: $validValue"
     case Failure(ex) => s"I have obtained an exception: $ex"
   }
-  // map, flatMap, filter
+  // you can use map, flatMap, filter to process Try and Option besides using PM
 
 
   /**
@@ -61,14 +61,14 @@ object Advanced extends App {
   // #1: implicit arguments
   def aMethodWithImplicitArgs(implicit arg: Int) = arg + 1
   implicit val myImplicitInt = 46
-  println(aMethodWithImplicitArgs)  // aMethodWithImplicitArgs(myImplicitInt)
+  println(aMethodWithImplicitArgs)  // compiler -> aMethodWithImplicitArgs(myImplicitInt)
 
   // #2: implicit conversions
   implicit class MyRichInteger(n: Int) {
     def isEven() = n % 2 == 0
   }
 
-  println(23.isEven()) // new MyRichInteger(23).isEven()
+  println(23.isEven()) // compiler -> new MyRichInteger(23).isEven()
   // use this carefully
 
 }

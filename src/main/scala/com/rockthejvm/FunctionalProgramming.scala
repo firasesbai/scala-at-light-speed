@@ -13,12 +13,13 @@ object FunctionalProgramming extends App {
 
   /*
     Scala runs on the JVM
-    Functional programming:
+    JVM is fundamentally build for OO
+    Functional programming (we want to work with functions as first class elements of programming):
     - compose functions
     - pass functions as args
     - return functions as results
 
-    Conclusion: FunctionX = Function1, Function2, ... Function22
+    Conclusion/Solution: FunctionX = Function1, Function2, ... Function22
    */
 
   val simpleIncrementer = new Function1[Int, Int] {
